@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+    <link href="lib/jasmine-2.5.2/jasmine.css" rel="stylesheet">
+    <script>
+        
+       
+        
+        var calculator = {
+            
+            add:function(g1,g2){
+                return g1+g2;
+            },
+            multiply(g1,g2){
+                return g1*g2;
+            }
+        }
+        
+        calculator.add(33,5);
+        
+        describe("calculator",function(){
+            
+            it("add 2+2 = 4",function(){
+                
+                var result = calculator.add(2,2);
+                expect(result).toBe(4);
+            });
+            
+            it("multiply 3*3",function(){
+                var result = calculator.multiply(3,3);
+                expect(result).toBe(9);
+            })
+            
+        });
+        
+        
+        
+    function DoeIets(){
+            var p = document.getElementsByTagName("p")[0];
+        p.innerHTML = "hallo";
+    }
+    </script>
+    <script>
+    
+        describe("Testing my web page",function(){
+            
+            it("is paragraph defined",function(){
+                
+                var p = document.getElementsByTagName("p")[0];
+                expect(p).toBeDefined();
+            
+            });
+            
+            it("content paragraaf = hallo",function(){
+                var knop = document.querySelector("input");
+                
+                knop.click();
+                var tekstInParagraaf = document.getElementsByTagName("p")[0].innerHTML;
+                expect(tekstInParagraaf).toBe("hallo");
+            });
+            
+        });
+    </script>
+</head>
+<body>
+   
+   <p></p>
+   <input type="button" onclick="DoeIets()">
+    
+</body>
+</html>
